@@ -1,21 +1,25 @@
 public class Main {
     public static void main(String[] args) {
         Author pushkin = new Author("Александр","Пушкин");
+        Author pushkin2 = new Author("Александр","Пушкин");
         Author bunin = new Author("Иван","Бунин");
         Book natalie = new Book("Натали",1942,bunin);
         Book prorok = new Book("Пророк", 1829,pushkin);
-
-        System.out.println(pushkin.getName()+" "+pushkin.getSurname());
-
-        System.out.println(bunin.getName()+" "+bunin.getSurname());
-
-        System.out.println(natalie.getTitle()+" "+natalie.getYearPublications()+" "
-                +natalie.author().getName()+" "+natalie.author().getSurname());
-
-        System.out.println(prorok.getTitle()+" "+prorok.getYearPublications()+" "
-                +prorok.author().getName()+" "+prorok.author().getSurname());
+        Book natalie2 = new Book("Натали",1942,bunin);
 
         prorok.setYearPublications(1828);
-        System.out.println(prorok.getYearPublications());
+
+        System.out.println(pushkin);
+
+        System.out.println(natalie);
+
+        System.out.println(pushkin.equals(pushkin2));
+
+        System.out.println(natalie.equals(natalie2));
+
+        System.out.println(natalie.hashCode());
+
+        System.out.println(pushkin.hashCode());
+        System.out.println(pushkin2.hashCode());
     }
 }
